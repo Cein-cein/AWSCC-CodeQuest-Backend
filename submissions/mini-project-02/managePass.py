@@ -49,6 +49,7 @@ def add():
 
 def view():
     fileName = 'submissions\mini-project-02\dbPass.json'
+    print("=================================================")
     with open(fileName, 'r') as file:
         data = json.load(file)
         for name, val in data.items():
@@ -56,9 +57,12 @@ def view():
             for x in range(len(val)):
                 print(f"\tEmail: {val[x]['email']}")
                 print(f"\tPassword: {val[x]['password']}")
+    print("=================================================")
+    
 
 def search(webName):
     fileName = 'submissions\mini-project-02\dbPass.json'
+    print("=================================================")
     with open(fileName, 'r') as file:
         data = json.load(file)
         for name, val in data.items():
@@ -67,9 +71,11 @@ def search(webName):
                 for x in range(len(val)):
                     print(f"\t{x+1}. Email: {val[x]['email']}")
                     print(f"\t   Password: {val[x]['password']}")
+                print("=================================================")
                 return True
             
         print("Website does not exist.")
+    print("=================================================")
             
 def delete(webName):
     fileName = 'submissions\mini-project-02\dbPass.json'
@@ -83,7 +89,7 @@ def delete(webName):
             with open(fileName, 'w') as file:
                 json.dump(data, file, indent=4)
 
-                print("Successfully removed.")
+                print("\nSuccessfully removed.")
             if len(data[webName]) == 0:
                 data.pop(webName)
                 with open(fileName, 'w') as file:
@@ -93,6 +99,7 @@ def delete(webName):
         else:
             print("Error. Invalid input.")
             return
+    print("=================================================")
 
 def update(webName):
     fileName = 'submissions\mini-project-02\dbPass.json'
@@ -108,8 +115,9 @@ def update(webName):
             with open(fileName, 'w') as file:
                 json.dump(data, file, indent=4)
 
-                print("Update successful.")
+                print("\nUpdate successful.")
         else:
             print("Error. Invalid input.")
             return
+    print("=================================================")
 

@@ -34,6 +34,7 @@ while manage:
             exist = managePass.check_webExist(web)
         managePass.update(web)
     elif user == 6:
+        print("Thank you for using this program.")
         manage = False
     else:
         print("Invalid input.")
