@@ -10,7 +10,7 @@ def options():
     return optionList
 
 def check_webExist(webName):
-    fileName = 'D:\GitHubProjects\AWSCC-CodeQuest-Backend\submissions\mini-project-02\dbPass.json'
+    fileName = 'submissions\mini-project-02\dbPass.json'
     with open(fileName, 'r') as file:
         data = json.load(file)
         if webName not in data:
@@ -32,7 +32,7 @@ def add():
         }]
     }
  
-    fileName = 'D:\GitHubProjects\AWSCC-CodeQuest-Backend\submissions\mini-project-02\dbPass.json'
+    fileName = 'submissions\mini-project-02\dbPass.json'
     with open(fileName, 'r') as file:
         data = json.load(file)
 
@@ -48,7 +48,7 @@ def add():
     print("Successfully added!")
 
 def view():
-    fileName = 'D:\GitHubProjects\AWSCC-CodeQuest-Backend\submissions\mini-project-02\dbPass.json'
+    fileName = 'submissions\mini-project-02\dbPass.json'
     with open(fileName, 'r') as file:
         data = json.load(file)
         for name, val in data.items():
@@ -58,7 +58,7 @@ def view():
                 print(f"\tPassword: {val[x]['password']}")
 
 def search(webName):
-    fileName = 'D:\GitHubProjects\AWSCC-CodeQuest-Backend\submissions\mini-project-02\dbPass.json'
+    fileName = 'submissions\mini-project-02\dbPass.json'
     with open(fileName, 'r') as file:
         data = json.load(file)
         for name, val in data.items():
@@ -72,7 +72,7 @@ def search(webName):
         print("Website does not exist.")
             
 def delete(webName):
-    fileName = 'D:\GitHubProjects\AWSCC-CodeQuest-Backend\submissions\mini-project-02\dbPass.json'
+    fileName = 'submissions\mini-project-02\dbPass.json'
     with open(fileName, 'r') as file:
         data = json.load(file)
         search(webName)
@@ -95,7 +95,7 @@ def delete(webName):
             return
 
 def update(webName):
-    fileName = 'D:\GitHubProjects\AWSCC-CodeQuest-Backend\submissions\mini-project-02\dbPass.json'
+    fileName = 'submissions\mini-project-02\dbPass.json'
     with open(fileName, 'r') as file:
         data = json.load(file)
         search(webName)
