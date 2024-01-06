@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Password Manager</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1 id="title">Welcome To</h1>
+        <h1 id="main-title">Password Manager</h1>
+        <br>
+        <div class="contain-chest">
+            <img src="{{ url_for('static', filename='sparkle.png') }}" alt="sparkle" id="sparkle">
+            <img src="{{ url_for('static', filename='chest.png') }}" alt="chest" id="chest">
+        </div>
+        <div class="contain-keys">
+            <div class="contain-redkey" onclick="goToManage()" onmouseover="showRed()" onmouseout="hideRed()">
+                <h1 id="redkey-title">MANAGE DATA</h1>
+                <img src="{{ url_for('static', filename='redkey.png') }}" alt="redkey" id="redkey">
+            </div>
+            <div class="contain-bluekey" onclick="goToView()" onmouseover="showBlue()" onmouseout="hideBlue()">
+                <h1 id="bluekey-title">VIEW ALL DATA</h1>
+                <img src="{{ url_for('static', filename='bluekey.png') }}" alt="bluekey" id="bluekey">
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+    </body>
+</html>

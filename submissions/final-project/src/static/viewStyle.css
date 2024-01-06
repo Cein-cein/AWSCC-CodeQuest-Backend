@@ -1,0 +1,114 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    text-align: center; 
+    background-color: #b4a675; 
+    padding: 50px;
+}
+
+#title{
+    font-size: 45px; 
+    color: white; 
+    -webkit-text-stroke: 1.5px; 
+    -webkit-text-stroke-color: black;
+}
+
+.contain-table{
+    border: 3px solid black; 
+    width: 1000px; 
+    padding: 5px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: #92834e;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.vault-table{
+    background-color: #4e5d92; 
+    color: white; 
+    border: 1px solid #92834e; 
+    border-collapse: collapse; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+tr, th, td{
+    border: 1px solid #92834e;
+    padding: 10px;
+}
+
+.empty-table{
+    background-color: #4e5d92; 
+    color: white; 
+    border: 1px solid #92834e; 
+    border-collapse: collapse; 
+    width: 1000px;
+}
+
+.contain-chestBtn{
+    border: 3px solid black;
+    border-radius: 5px;
+    height: 150px; 
+    width: 150px;
+    position: fixed;
+    bottom: 40px;
+    margin-left: auto; 
+    margin-right: auto; 
+    transition: 1.2s;
+}
+
+.contain-chestBtn:hover{
+    background-color: #D4AF37;
+    cursor: pointer;
+    transition: 1.2s;
+}
+
+#sparkle1{
+    width: 50px; 
+    height: 50px; 
+    margin-top: -35px; 
+    position: relative; 
+    top: 35px; 
+    left: 80px;
+}
+
+#sparkle2{
+    width: 50px; 
+    height: 50px; 
+    margin-top: -35px; 
+    position: relative; 
+    top: 135px; 
+    right: 80px;
+}
+
+#chest{
+    width: 150px; 
+    height: 115px;
+}
+
+#chest-title{
+    position: relative; 
+    top: 55px; 
+    color: white; 
+    display: none;
+}
+
+.deleteBtn{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: transparent;
+    color: #a50000;
+    padding: 5px;
+    border: 1px solid #a50000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.deleteBtn:hover{
+    background-color: #a50000;
+    color: white;
+    transition: 0.2s;
+}
+
+a:link{
+    text-decoration: none;
+}

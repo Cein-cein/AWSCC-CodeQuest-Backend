@@ -1,0 +1,112 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    padding: 50px; 
+    text-align: center; 
+    background-color: #b4a675;
+}
+
+#title{
+    font-size: 35px; 
+    line-height: 3px;
+}
+
+#main-title{
+    font-size: 65px; 
+    line-height: 3px; 
+    color: #ffffff; 
+    -webkit-text-stroke: 1.5px; 
+    -webkit-text-stroke-color: black;
+}
+
+.contain-chest{
+    width: 25%; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+#sparkle{
+    width: 150px; 
+    height: 150px; 
+    color: gold; 
+    position: relative; 
+    top: 98px; 
+    left: 130px; 
+    margin-top: -150px;
+}
+
+#chest{
+    width: 350px; 
+    height: 265px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.contain-keys{
+    text-align: center; 
+    padding: 50px; 
+    height: 180px;
+}
+
+.contain-redkey{
+    float: left; 
+    width: 48%;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1.2s;
+}
+
+.contain-redkey:hover{
+    background-color: #b60000;
+    transition: 1.2s;
+}
+
+#redkey-title{
+    color:white;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 66px;
+    height: 93px;
+    display: none;
+    -webkit-text-stroke: 1px; 
+    -webkit-text-stroke-color: black;
+}
+
+#redkey{
+    width: 180px; 
+    height: 180px;
+}
+
+.contain-bluekey{
+    float: right;
+    width: 48%;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1.2s;
+}
+
+.contain-bluekey:hover{
+    background-color: #006ab6;
+    transition: 1.2s;
+}
+
+#bluekey{
+    width: 180px; 
+    height: 180px;
+}
+
+#bluekey-title{
+    color:white;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 66px;
+    height: 93px;
+    display: none;
+    -webkit-text-stroke: 1px; 
+    -webkit-text-stroke-color: black;
+}

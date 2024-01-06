@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Password Manager</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='viewStyle.css') }}">
+    </head>
+    <body>
+        <h1 id="title">Passwords Vault</h1>
+
+        <div class="contain-table">
+            <table class="vault-table">
+                <tr>
+                    <th style="width: 50px;">ID</th>
+                    <th style="width: 200px;">Website</th>
+                    <th style="width: 400px;">Email</th>
+                    <th style="width: 350px;">Password</th>
+                    <th style="width: 150px">Delete</th>
+                </tr>
+                {% if password|length %}
+                    {% for password in password %}
+                    <tr>
+                        <td data-id="{{password.id}}">{{password.id}}</td>
+                        <td data-website="{{password.wesbite}}">{{password.website}}</td>
+                        <td data-email="{{password.email}}">{{password.email}}</td>
+                        <td data-password="{{password.password}}">{{password.password}}</td>
+                        <td>
+                            <a href="{{ url_for('views.deletePass', id=password.id) }}"> 
+                                <div class="deleteBtn">Delete</div>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                        <table class="empty-table">
+                            <th style="font-style: italic;">Database is currently empty.</th>
+                        </table>
+                {% endif %}
+            </table>
+        </div>
+        <div class="contain-chestBtn" onclick="goToIndex()" onmouseover="showChestTxt()" onmouseout="hideChestTxt()">
+                <img src="{{ url_for('static', filename='sparkle.png') }}" alt="sparkle1" id="sparkle1">
+                <img src="{{ url_for('static', filename='sparkle.png') }}" alt="sparkle2" id="sparkle2">
+                <img src="{{ url_for('static', filename='chest.png') }}" alt="chest" id="chest">
+                <h3 id="chest-title">RETURN TO CHEST</h3>
+        </div>
+        <script text="type/javascript" src="{{ url_for('static', filename='view.js') }}"></script>
+    </body>
+</html>

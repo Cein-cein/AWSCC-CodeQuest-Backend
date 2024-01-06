@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Password Manager</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='manageStyle.css') }}"/>
+    </head>
+    <body>
+        <h1 id="title">Manage Data</h1>
+        <div class="contain-search">
+            <form action="/dataMng/search" method="post">
+                <div class="contain-inputs">
+                    <label for="search">Search</label>
+                    <input type="text" id="search" name="search" placeholder="Search the name of the website"/>
+                    <small>Tip: Use this to get the needed information such as the id of your data.</small>
+                </div>
+                <button type="submit" id="search">Search</button>
+                {% if err|length %}
+                    <h3>{{err}}</h3>
+                {% else %}
+                    {% if results|length %}
+                    <div class="contain-results">
+                        <ul id="results-list">
+                            <hr>
+                            {% for result in results %}
+                            <li id="results">ID: {{result.id}} || Website: {{result.website}} || Email: {{result.email}}</li><br><hr>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                {% endif %}
+            </form>
+        </div>
+
+        <div class="contain-tabs">
+            <ul>
+                <li class="tab-link" onclick="showTab(event, 'add')" id="active">Add</li>
+                <li class="tab-link" onclick="showTab(event, 'update')">Update</li>
+            </ul>
+        </div>
+        
+        <div id="add" class="contain-form active">
+            <form action="/dataMng/add" method="post">
+                <h1>Add A New Data</h1>
+                <div class="contain-inputs">
+                    <label for="website">Name of Website</label>
+                    <input type="text" id="website" name="website" placeholder="Enter the website name" required/>
+                </div>
+                <div class="contain-inputs">
+                    <label for="website">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required/>
+                </div>
+                <div class="contain-inputs">
+                    <label for="website">Password <small>(Note: Avoid using the same password for different accounts.)</small> </label>
+                    <input type="text" id="password" name="password" placeholder="Enter your password" required/>
+                </div>
+                <button type="submit" id="add">Add</button>
+            </form>
+        </div>
+
+        <div id="update" class="contain-form">
+            <form action="/dataMng/update" method="post">
+                <h1>Update Your Email/Password</h1>
+                <div class="contain-inputs">
+                    <label for="website">ID of Data</label>
+                    <input type="number" id="id" name="id" placeholder="Enter the ID of the data" required/>
+                </div>
+                <div class="contain-inputs">
+                    <label for="website">Name of Website</label>
+                    <input type="text" id="website" name="website" placeholder="Enter the website name" required/>
+                </div>
+                <div class="contain-inputs">
+                    <label for="website">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your new email" required/>
+                </div>
+                <div class="contain-inputs">
+                    <label for="website">Password</label>
+                    <input type="text" id="password" name="password" placeholder="Enter your new password" required/>
+                </div>
+                <button type="submit" id="update">Update</button>
+            </form>
+        </div>
+
+        <div class="contain-chestBtn" onclick="goToIndex()" onmouseover="showChestTxt()" onmouseout="hideChestTxt()">
+            <img src="{{ url_for('static', filename='sparkle.png') }}" alt="sparkle1" id="sparkle1">
+            <img src="{{ url_for('static', filename='sparkle.png') }}" alt="sparkle2" id="sparkle2">
+            <img src="{{ url_for('static', filename='chest.png') }}" alt="chest" id="chest">
+            <h3 id="chest-title">RETURN TO CHEST</h3>
+        </div>
+
+        <script text="type/javascript">
+            function showTab(event, option){
+                var i;
+                var tabForm = document.getElementsByClassName("contain-form");
+                for (i = 0; i < tabForm.length; i++) {
+                    tabForm[i].style.display = "none";
+                }
+                var tabLink = document.getElementsByClassName("tab-link");
+                for (i = 0; i < tabForm.length; i++){
+                    tabLink[i].className = tabLink[i].className.replace(" active", "");
+                }
+                document.getElementById(option).style.display = "inline";
+                event.currentTarget.className += " active";
+            }
+            document.getElementById("active").click();
+        </script>
+        <script text="type/javascript" src="{{ url_for('static', filename='manage.js') }}"></script>
+    </body>
+</html>
